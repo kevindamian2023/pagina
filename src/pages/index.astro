@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+const flags = [	
+	{
+		flag:'', name: 'Bandera 1'
+		},
+
+		
+ 
+	{
+		flag:'', name: 'Bandera 2'
+		},
+		
+
+	{
+		flag:'', name: 'Bandera 3'
+		
+	}
+]
+---
+<Layout title="Hola, mundo">
+	<div class="container">
+		<div class="banner">
+			Banner
+		</div>
+		<div class="langs">
+			{
+				flags.map((flag) => <a href="">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(234, 26, 26, 1);transform: ;msFilter:;"><path d="m14.303 6-3-2H6V2H4v20h2v-8h4.697l3 2H20V6z"></path></svg>
+				{flag.name}
+			</a>)
+			}
+			
+			
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.banner{
+		height: 320px;
+	
+		
+
+	}
+	.langs{
+		height: 46px;
+		display: flex;
+		
+
+		& a{
+			transition: background 300ms ease-in-out;
+			display: flex;
+			align-items: center;
+			padding: 0 8px;
+			color: white;
+			text-decoration: none;
+			background: purple;
+			height: 100%;
+
+		}
+		& a:hover{
+			background-color: green;
+
+		}
+	}
+</style>
