@@ -1,9 +1,7 @@
 ---
-interface Props {
-	title: string;
-}
-
 const { title } = Astro.props;
+import { Icon } from 'astro-icon/components'
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 ---
 
 <!doctype html>
@@ -11,15 +9,22 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width" />IDIOMA DE LA 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 	</head>
 	<body>
-		<header>
-			<div class="container">
-				Este es el encabezado
+		<header class="h-16 flex items-center ">
+			<div class="container flex flex-row items-center justify-between max-w-[1200px] mx-auto">
+				<img src="/duolingologo.svg" alt="">
+				<a class="relative group flex flex-row items-center hover:text-green-300 font-extrabold uppercase text-gray-400" href="">Idioma de la página
+					<Icon name="mdi:chevron-down" />
+					<div class="absolute top-6 hidden group-hover:block">
+						Opciones de menú
+					</div>
+				</a>
 			</div>
+			
 			
 
 		</header>
@@ -29,36 +34,3 @@ const { title } = Astro.props;
 		</footer>
 	</body>
 </html>
-<style is:global>
-	footer{
-		background: pink;
-		height: 32px;
-	}
-	.container{
-		background: rgb(198, 159, 207);
-		max-width: 800px;
-		margin: 0 auto;
-
-	}
-	header{
-		background: green;
-		height: 36px;
-	}
-	
-	html, body {
-		font-family: system-ui, sans-serif;
-		margin: 0;
-		padding: 0;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
